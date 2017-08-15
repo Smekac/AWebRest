@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>registracija</title>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/registracija.js" ></script> 	<!-- Mora se ukljuciti posle Jquerry-jaaaa -->
+
+<link rel="stylesheet" href="zaCss.css" />
+<style type="text/css"> /*====================================================*/
+.login{	/*Izmena u odnosu na postojeci ukljuceni css*/
+	position: absolute;
+	top: calc(40% - 100px) !important;
+	left: calc(50% - 50px);
+	height: 190px;
+	width: 350px;
+	padding: 10px;	
+}
+</style> <!-- ============================================================ -->
+
+</head>
+<body oncontextmenu="return false">
+
+<div align="center" class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Multi<span>Media</span></div>
+		</div>
+		<br>
+	<form name="register" id="register" class="register" >
+		<div class="login">	<!-- zbog Zacss-a -->
+				<table>
+				<tr>
+				<td><input type="text" placeholder="Username" title="Please write your ID name" id="userid" name="username"><br>
+				</td>
+				
+				 <td><div id="divUserId" style="display:none">
+            	Unesite korisnicko ime !</div></td>
+				</tr>
+				<tr>
+				<td>
+				<input type="password" placeholder="Password" minlength="5" title="Please write your pasword least 4 characters" id="pasword" name="lozinka" pattern=".{4,}" required> 
+				</td>
+				
+				<td><div id="divSifra" style="display:none">
+            	Unesite sifru !</div></td>
+				</tr>
+				<tr>
+				<td>
+				<input type="text" placeholder="Name" name="ime" title="your First name(only letters)"  onkeyup="samoSlova(this)" id="name">
+				</td>
+			
+				<td><div id="divIme" style="display:none">
+                Unesite vase ime !</div></td>
+            	</tr>
+			
+				<tr>
+				<td>
+				<input type="text" placeholder="Last name" title="Second name (only letters)" id="lastName" onkeyup="samoSlova(this)" name="prezime" >
+				</td>
+				<td><div id="divPrezime" style="display:none">
+            	Molimo vas unesite vase prezime !</div></td>
+				</tr>
+				
+				<tr>
+				<td>
+				<input type="text" placeholder="telephone" title="your pohone number(only number)" onkeyup="samoBrojevi(this)" name="brTelefona" id="telephone">
+				</td>
+				<td><div id="divTelefon" style="display:none">
+            	Molimo vas unesite broj telefona !</div></td>
+				</tr>
+				
+				<tr>
+				<td>
+				<input type="text" placeholder="email" name="email" title="" id="email">
+				</td>
+				<td><div id="divEmail" style="display:none">
+            	Molimo vas unesite vas email</div></td>
+				
+				</tr>
+				<!-- <input type="text " placeholder="Date " > <br/>-->
+				<tr>
+				<td>
+				<input type="button" id="registracija"  value="register"/>
+				<!-- onclick="proveraNaloga(this.form)" -->
+				</td>
+				<td> <div id="sva"></div> </td>
+				</tr>
+				</table>
+		<br/><br/>
+<!--	<div id="registracija" style="color: red"> <a href="registracija.html" > Do you want register ? </a> </div>
+		
+		</div>-->
+		
+	</form>
+
+<script type="text/javascript">
+
+function samoSlova(polje){
+	var regex = /[^a-z]/gi;	// izmedju (/ /) 
+	polje.value = polje.value.replace(regex,"");	//postoji RegExp	
+	
+}
+
+function samoBrojevi(polje){
+	var regex2 = /[^0-9]/gi;	// izmedju (/ /) 
+	polje.value = polje.value.replace(regex2,"");	
+}
+
+</script>
+
+</body>
+</html>

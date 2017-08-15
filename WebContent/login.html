@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <title>Login</title>
+
+<!--  
+<script type="text/javascript" src="js/login.js" ></script>
+-->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/login.js" ></script>
+
+<link rel="stylesheet" href="zaCss.css" />
+
+
+
+</head>
+
+<body oncontextmenu="return false">
+
+  <div align="center" class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Multi<span>Media</span></div>
+		</div>
+		<br>
+		<form name="login"  onsubmit="login(); return false;" >
+		<div class="login">
+				<input type="text" placeholder="Username" title="Please write your ID name" id="KorisnickoIme" name="username"><br>
+				<input type="password" placeholder="Password" title="Please write your pasword least 4 characters" id="sifra" name="lozinka" pattern=".{4,}" required> 
+				<br/>
+				<input type="submit" value="Login"/>
+				<!-- onclick="proveraNaloga(this.form)" -->
+		<br/><br/>
+		<div id="registracija" style="color: red"> <a href="registracija.html" > Do you want register ? </a> </div>
+		<div id="porukaID" > Poruka </div>
+		</div>
+		
+</form>
+
+<script type="text/javascript">
+function proveraNaloga(form)
+{
+ 
+ if(form.userid.value == "smekac" && form.pasword.value == "1234")
+  {
+    window.open('https://www.reddit.com/');
+ 	return true;
+  }
+ else
+ {
+
+	alert("This user does not exist in our base!")
+	 return false;
+ }
+ 
+}
+</script>
+
+</body>
+</html>
